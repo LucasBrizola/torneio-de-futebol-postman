@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "63df2fe9-0d50-4efa-a6cf-2cc32928b060",
+		"name": "Torneio fundatec",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "team",
+			"item": [
+				{
+					"name": "team create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Fundatec\",\r\n    \"players\":[\r\n        {\r\n            \"name\":\"Lucas\",\r\n            \"number\": 11\r\n        },\r\n        {\r\n            \"name\":\"Matheus\",\r\n            \"number\":24\r\n        },\r\n        {\r\n            \"name\":\"Leo\",\r\n            \"number\":20\r\n        },\r\n        {\r\n            \"name\":\"Danny Boy\",\r\n            \"number\":10\r\n        },\r\n        {\r\n            \"name\":\"Melissa\",\r\n            \"number\":1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/teams"
+					},
+					"response": []
+				},
+				{
+					"name": "team addPlayer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Luis\",\r\n    \"number\":80\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/teams/team/fundatec"
+					},
+					"response": []
+				},
+				{
+					"name": "team findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/teams"
+					},
+					"response": []
+				},
+				{
+					"name": "team findByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/teams/fundatec"
+					},
+					"response": []
+				},
+				{
+					"name": "team update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"TI20\",\r\n    \"players\":[{\r\n            \"name\":\"Lucas\",\r\n            \"number\": 11\r\n        },\r\n        {\r\n            \"name\":\"Matheus\",\r\n            \"number\":24\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/teams/fundatec"
+					},
+					"response": []
+				},
+				{
+					"name": "team delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/teams/ti20"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Match",
+			"item": [
+				{
+					"name": "match create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"final\",\r\n    \"hour\":\"16:00\",\r\n    \"team1\":\"Professores\",\r\n    \"team2\":\"ti20\",\r\n    \"goals\":\"0x0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/matches"
+					},
+					"response": []
+				},
+				{
+					"name": "match update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"semi-final\",\r\n    \"goals\":\"1x0\",\r\n    \"hour\":\"17:00\",\r\n    \"team1\":\"Profs\",\r\n    \"team2\":\"ti20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/matches/final"
+					},
+					"response": []
+				},
+				{
+					"name": "match findAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/matches"
+					},
+					"response": []
+				},
+				{
+					"name": "match findByName",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/matches/final"
+					},
+					"response": []
+				},
+				{
+					"name": "match update goals",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "0x1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/matches/final"
+					},
+					"response": []
+				},
+				{
+					"name": "match deleteByName",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/matches/final"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "user login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"fundatec\",\r\n    \"password\":\"torneio\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/user"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
